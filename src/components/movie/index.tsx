@@ -13,7 +13,7 @@ import {
 
 const Movie = () => {
   const [animationMovie, setAnimation] = useState<any>({ x: 0 });
-  const [movie, setMovie] = useContext<any>(MovieContext);
+  const { movie, setMovie } = useContext<any>(MovieContext);
 
   const changeAnimation = () => {
     setAnimation({ x: 1200 });

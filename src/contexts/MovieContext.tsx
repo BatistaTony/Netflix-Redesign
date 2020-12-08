@@ -1,11 +1,19 @@
 import { createContext, useState } from "react";
 import { TMovie } from "../../types";
 
-export const MovieContext = createContext<TMovie>({
-  cover: "",
-  description: "",
-  title: "",
-  year: "",
+type TContext = {
+  movie: TMovie;
+  setMovie: (movie: TMovie) => void;
+};
+
+export const MovieContext = createContext<TContext>({
+  movie: {
+    cover: "",
+    description: "",
+    title: "",
+    year: "",
+  },
+  setMovie: () => {},
 });
 
 export const MovieProvider = (props) => {
@@ -17,7 +25,7 @@ export const MovieProvider = (props) => {
   });
 
   return (
-    <MovieContext.Provider value={[movie, setMovie]}>
+    <MovieContext.Provider value={{ movie, setMovie }}>
       {props.children}
     </MovieContext.Provider>
   );

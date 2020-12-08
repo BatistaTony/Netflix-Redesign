@@ -7,7 +7,7 @@ import Movie from "../components/movie";
 import { MovieContext } from "./../contexts/MovieContext";
 
 export default function Home() {
-  const [movie] = useContext<any>(MovieContext);
+  const { movie, setMovie } = useContext<any>(MovieContext);
 
   const movies = [
     "/images/photo1.jpg",
@@ -31,7 +31,7 @@ export default function Home() {
           <Title initial={{ scale: 0.1 }} animate={{ scale: 1 }}>
             POPULAR
           </Title>
-          {/* <ListMovie movies={movies} /> */}
+          <ListMovie movies={movies} />
         </ContainerHome>
       ) : (
         <Movie />

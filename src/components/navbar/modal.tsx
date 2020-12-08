@@ -17,7 +17,7 @@ type TProps = {
 
 const ModalSearch = ({ toggleModal }: TProps) => {
   const [animationModal, setAnimation] = useState<any>({ y: 0 });
-  const [movie, setMovie] = useContext<any>(MovieContext);
+  const { movie, setMovie } = useContext<any>(MovieContext);
 
   const results: Array<TMovie> = [
     {
