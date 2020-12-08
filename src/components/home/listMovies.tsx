@@ -7,7 +7,7 @@ type TListMovies = {
 };
 
 const ListMovie = ({ movies }: TListMovies) => {
-  const [movie, setMovie] = useContext<any>(MovieContext);
+  const { movie, setMovie } = useContext<any>(MovieContext);
 
   const selectMovie = () => {
     setMovie({
